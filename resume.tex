@@ -1,0 +1,170 @@
+%-------------------------
+% Resume in LaTeX
+% Based on a common minimalist resume template (works out-of-the-box on Overleaf)
+%-------------------------
+
+\documentclass[letterpaper,10pt]{article} % 10pt font for clean and structured single-page layout
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[left=0.5in, top=0.5in, right=0.5in, bottom=0.5in]{geometry} % Standard 0.5-inch margins
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting with original spacing rules
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titrule \vspace{-5pt}]
+
+% Ensure PDF is machine readable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands (Restored to original, non-overlapping spacing)
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Utkarsh Pareek} \\ \vspace{2pt}
+    \small +91-7230849010 $|$ Reg No.: 20232054 $|$ \href{mailto:pareekutkarsh004@gmail.com}{pareekutkarsh004@gmail.com} \\ \vspace{1pt}
+    \small \href{https://github.com/pareekutkarsh004}{github.com/pareekutkarsh004} $|$ \href{https://linkedin.com/in/utkarshpareek004}{linkedin.com/in/utkarshpareek004}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Motilal Nehru National Institute of Technology Allahabad}{2023 -- 2027}
+      {Bachelor of Technology in Chemical Engineering}{CPI: 7.90/10.00 (till 6th Semester)}
+    \resumeSubheading
+      {Rainbow School}{2022}
+      {Senior Secondary School, CBSE, Rajasthan}{Percentage: 82.0\%}
+    \resumeSubheading
+      {Rainbow School}{2020}
+      {Secondary School, CBSE, Rajasthan}{Percentage: 90.04\%}
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\vspace{7pt} % Compensates for the \vspace{-7pt} at the end of the last \resumeSubheading in Education
+\section{Projects}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+          {\textbf{ChurnInsight} $|$ \href{https://github.com/pareekutkarsh004/Customer-Churn-Prediction}{\color{blue}{GitHub}}}{}
+      \resumeItemListStart
+        \small{\item[] A data-driven analytics pipeline and interactive dashboard to analyze customer drop-off drivers and predict churn risk.\\
+        \textit{Tools: Python, SQL (SQLite), Pandas, Scikit-learn, Streamlit, Plotly, Excel}}
+        \resumeItem{Engineered a data pipeline loading 7K+ subscriber records into SQLite; wrote SQL queries to quantify \$139K+ in monthly revenue leakage and segment drop-off by cohort.}
+        \resumeItem{Ran EDA uncovering that 52.9\% of churn occurs in the first 6 months and manual billing raises churn probability by 47\% vs. auto-pay, shaping targeted retention actions.}
+        \resumeItem{Built classification models achieving 84.3\% ROC-AUC; shipped an interactive Streamlit dashboard with a live risk calculator and automated retention recommendations.}
+      \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Student Performance Predictor} $|$ \href{https://github.com/pareekutkarsh004/Student_Performance_Prediction}{\color{blue}{GitHub}}}{}
+      \resumeItemListStart
+        \small{\item[] A modular machine learning pipeline predicting student math scores from demographic and academic variables, deployed as a Flask web application.\\
+        \textit{Tools: Python, Pandas, NumPy, Scikit-learn, XGBoost, CatBoost, Flask, Seaborn, Matplotlib, HTML/CSS}}
+        \resumeItem{Conducted Exploratory Data Analysis (EDA) on student demographics, identifying reading and writing scores as primary predictive features with high positive correlations ($r = 0.82$, $0.80$).}
+        \resumeItem{Built a robust preprocessing pipeline using OneHotEncoder and StandardScaler, and benchmarked 10 regression models using hyperparameter tuning to achieve a peak test $R^2$ score of $88.2\%$.}
+        \resumeItem{Engineered a modular codebase featuring custom logging, exception handling, and a clean Flask web interface with premium styling for real-time inference.}
+      \resumeItemListEnd
+      
+      \resumeProjectHeading
+          {\textbf{CineRecommend} $|$ \href{https://github.com/pareekutkarsh004/Movie_Recommendar_System}{\color{blue}{GitHub}}}{}
+      \resumeItemListStart
+        \small{\item[] A content-based recommendation engine and Streamlit prototype for personalized movie discovery.\\
+        \textit{Tools: Python, Pandas, Scikit-learn, NLTK, Streamlit, TMDB REST API}}
+        \resumeItem{Engineered a metadata pipeline merging 4.8K+ movie profiles with cast/crew credits into a unified feature index for similarity modeling.}
+        \resumeItem{Built a content-based recommender using CountVectorizer and Cosine Similarity over a 5,000-dimensional feature space; integrated live TMDB data into an interactive Streamlit prototype.}
+      \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\vspace{5pt} % Compensates for the \vspace{-5pt} at the end of the last \resumeItemListEnd in Projects
+\section{Technical Skills and Interests}
+ \begin{itemize}[leftmargin=0.15in, label={}]\vspace{-5pt}
+    \small{\item{
+     \textbf{Languages}{: Python, SQL, C++, JavaScript} \\ \vspace{-1.5pt}
+     \textbf{Data \& Analytics}{: Excel, Power BI, Pandas, NumPy, MySQL, SQLite, MongoDB, Data Cleaning, Exploratory Data Analysis (EDA), Data Visualization, KPI Dashboarding, Cohort/Funnel Analysis, A/B Testing} \\ \vspace{-1.5pt}
+     \textbf{Machine Learning \& AI}{: Scikit-learn, XGBoost, CatBoost, Predictive Modeling, Feature Engineering, Regression, Random Forest, K-Means Clustering, Recommendation Systems} \\ \vspace{-1.5pt}
+     \textbf{Tools \& Interests}{: Flask, Streamlit, Git, GitHub, Plotly, Matplotlib, Seaborn, Jupyter, Vercel, Render $|$ Product & Business Analytics, Data-Driven Decision Making, AI/ML}
+    }}
+ \end{itemize}
+
+%-----------POSITIONS OF RESPONSIBILITY-----------
+\section{Positions of Responsibility}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Campus Ambassador, E-Cell, IIT Bombay}{2025}
+      {Boosted student registrations for the National Entrepreneurship Challenge via multi-channel outreach.}{}
+    \resumeSubheading
+      {PR Coordinator, Culrav-Avishkar, MNNIT Allahabad}{2024 -- 2025}
+      {Coordinated media outreach across 50+ colleges, driving 10,000+ footfall; managed press releases and media partnerships.}{}
+  \resumeSubHeadingListEnd
+
+%-----------ACHIEVEMENTS-----------
+\vspace{7pt} % Compensates for the \vspace{-7pt} at the end of the last \resumeSubheading in Positions of Responsibility
+\section{Achievements}
+  \resumeSubHeadingListStart
+    \small{\item[] \vspace{2pt}
+      \textbf{1st Position} --- Code Indrome, Avishkar Annual Tech Fest, MNNIT Allahabad --- 2025 \\
+      \textbf{2nd Position} --- Data Vision, Avishkar Annual Tech Fest, MNNIT Allahabad --- 2025 \\
+      \textbf{2nd Position} --- Marketing Nexus, Avishkar Annual Tech Fest, MNNIT Allahabad --- 2024
+    }
+  \resumeSubHeadingListEnd
+
+\end{document}
